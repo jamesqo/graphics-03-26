@@ -3,33 +3,16 @@ from matrix import *
 from math import *
 
 def add_polygon( points, x0, y0, z0, x1, y1, z1, x2, y2, z2 ):
-    pass
+    add_point(points, x0, y0, z0)
+    add_point(points, x1, y1, z1)
+    add_point(points, x2, y2, z2)
 
 def draw_polygons( points, screen, color ):
-    pass
+    for triple in itertriples(points):
+        draw_triple(triple)
 
 def add_box( points, x, y, z, width, height, depth ):
-    x1 = x + width
-    y1 = y - height
-    z1 = z - depth
-
-    #front
-    add_edge(points, x, y, z, x1, y, z)
-    add_edge(points, x, y1, z, x1, y1, z)
-    add_edge(points, x1, y, z, x1, y1, z)
-    add_edge(points, x, y, z, x, y1, z)
-
-    #back
-    add_edge(points, x, y, z1, x1, y, z1)
-    add_edge(points, x, y1, z1, x1, y1, z1)
-    add_edge(points, x1, y, z1, x1, y1, z1)
-    add_edge(points, x, y, z1, x, y1, z1)
-
-    #sides
-    add_edge(points, x, y, z, x, y, z1)
-    add_edge(points, x1, y, z, x1, y, z1)
-    add_edge(points, x, y1, z, x, y1, z1)
-    add_edge(points, x1, y1, z, x1, y1, z1)
+    pass
 
 def add_sphere( edges, cx, cy, cz, r, step ):
     points = generate_sphere(cx, cy, cz, r, step)
