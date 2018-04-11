@@ -1,5 +1,12 @@
 import math
 
+def cross_product(a, b):
+    r = []
+    r.append(a[1 ] *b[2] - a[2] * b[1])
+    r.append(a[2] * b[0] - a[0] * b[2])
+    r.append(a[0] * b[1] - a[1] * b[0])
+    return r
+
 def make_bezier():
     return [
         [-1, 3, -3, 1],

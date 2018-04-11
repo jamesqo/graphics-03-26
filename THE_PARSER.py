@@ -68,6 +68,8 @@ def parse_file(fname, edges, polygon, transform, screen, color):
             args = lines[c].strip().split(' ')
             # print 'args\t' + str(args)
 
+
+        c += 1
         if line == 'sphere':
             # print 'SPHERE\t' + str(args)
             add_sphere(polygon,
